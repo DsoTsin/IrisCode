@@ -1,0 +1,8 @@
+config("all")
+{
+    depends = ["//config:unittests"]
+}
+
+config ("unittests") {
+    public_defines = ['-DMin=1']
+}

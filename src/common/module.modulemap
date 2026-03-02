@@ -1,0 +1,5 @@
+module _Common {
+    header "stl.hpp"
+    header "ref.hpp"
+    export *
+}

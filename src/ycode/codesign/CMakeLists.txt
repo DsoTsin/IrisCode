@@ -1,0 +1,1 @@
+yc_add_bin(codesign SOURCES codesign_main.cpp)

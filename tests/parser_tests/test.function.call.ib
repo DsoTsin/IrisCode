@@ -1,0 +1,11 @@
+import("//uihg/dds")
+
+tests(target: "whik")
+
+new_project("fly_gfx") {
+	source = "xx.cc"
+	depends = "prebuild"
+	action("prebuild") {
+		execute("cc -c")
+	}
+}

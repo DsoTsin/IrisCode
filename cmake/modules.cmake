@@ -1,0 +1,10 @@
+
+include(${CMAKE_SOURCE_DIR}/external/detours/detours.cmake)
+include(${CMAKE_SOURCE_DIR}/external/libui/libui.cmake)
+include(${CMAKE_SOURCE_DIR}/external/zlib/zlib.cmake)
+include(${CMAKE_SOURCE_DIR}/external/vssetup/vssetup.cmake)
+include(${CMAKE_SOURCE_DIR}/external/libuv/source.cmake)
+include(${CMAKE_SOURCE_DIR}/external/sevenz_rust/sevenz_rust.cmake)
+include(${CMAKE_SOURCE_DIR}/external/yoga/cmake/yoga.cmake)
+include(${CMAKE_SOURCE_DIR}/external/mimalloc/mimalloc.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/skia_prebuilt.cmake)

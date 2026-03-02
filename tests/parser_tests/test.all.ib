@@ -1,0 +1,102 @@
+/**
+ * import statement
+ * 1. @imp identifier. not implemented
+ * 2. import(string)
+ */
+//@imp src.config // import build file from folder 'src/config' .ib(file) 
+import("//path to build absolute file") // import absolute build file '//' means current folder as root directory
+import("../../absolute file path") // use relative path
+
+/**
+ * condition statement
+ * if () {}
+ * else [if ()] {}
+ */
+if (build.version == "sdsevvd") {
+    print(msg: "fck $current_config")
+}
+
+if(target_os == "windows") {
+    print(msg: "sht $target_os")
+} else if (target_os == "harmos" && target_arch == "arm") {
+    message(msg: "ar oh")
+} else {
+    print(msg: "unknow os")
+}
+
+/**
+ * match statement
+ */
+match(target_arch) {
+    "mips" => {}, // not a local scope, still export to parent scope
+    "x64" => {},
+    "arm" | "arm64" => {}
+}
+
+/* assign statement */
+cc= "clang"
+
+objc_flag += "-DBUILD_AXX=\"sSCS\""
+objc.flag = objc_flag
+
+// function call statements
+print(msg : objc["flag"])
+
+/**
+ * scope statements
+ */
+config("all") {
+    // implicit structure
+    export = {
+        .cc = "clang",
+        .public_definition = "-DX=11",
+        .public_header_dir = ".."
+    }
+}
+
+native_target("swift_metal_win32") {
+    srcs = [
+        "src/metal.swift",
+        
+        "src/metal2.swift" : { "swift-flags" : "xxxd" },
+        "src/metal.rs",
+        "src/metal.cpp",
+        "src/metal.h"
+    ]
+    enable_filter = true
+    folder = "Native" // visual studio folder
+}
+
+/*
+    template has inherits, invoker
+ */
+template("hybrid_target") {
+    inherits = "native_target" // implicit member
+    // invoker scope
+    on_prebuild = { // scope variables
+
+    }
+    match(target_os) {
+        "windows" => {},
+        "android" => {}
+    }
+}
+
+fn build_generate(ris, output) {
+
+    ret false
+}
+
+/*
+ variable scopes:
+    global
+    file
+    decl_scope
+    scope_var
+ */
+
+zsd = build_generate(ris: "ss", output: src.config.x)
+
+target_os = "windows" // global variables
+target_arch = "x64" 
+

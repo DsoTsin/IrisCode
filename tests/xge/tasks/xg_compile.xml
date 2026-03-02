@@ -1,0 +1,34 @@
+<BuildSet FormatVersion="1">
+<Environments>
+    <Environment Name="Debug">
+        <Tools>
+            <Tool Name="Compiler" AllowRemote="True" GroupPrefix="Compiling..." Params="/DEBUG $(SourceFileName) $(SourceDir)\bin\debug\$(SourceName).o" Path="c:\dev\bin\compile.exe" OutputFileMasks="*.o"/>
+            <Tool Name="Linker" AllowRemote="False" GroupPrefix="Linking..." Params="/DEBUG c:\dev\sources\bin\debug" Path="c:\dev\bin\link.exe" OutputFileMasks="*.dll,*.lib"/>
+        </Tools>
+    </Environment>
+    <Environment Name="Release">
+        <Tools>
+            <Tool Name="Compiler" AllowRemote="True" GroupPrefix="Compiling..." Params="/RELEASE $(SourceFileName) $(SourceDir)\bin\release\$(SourceName).o" Path="c:\dev\bin\compile.exe" OutputFileMasks="*.o"/>
+            <Tool Name="Linker" AllowRemote="False" GroupPrefix="Linking..." Params="/RELEASE c:\dev\sources\bin\release" Path="c:\dev\bin\link.exe" OutputFileMasks="*.dll,*.lib"/>
+        </Tools>
+    </Environment>
+</Environments>
+<Project Name="My Project" WorkingDir="c:\dev\sources">
+    <TaskGroup Name="BuildDebug" Env="Debug">
+        <TaskGroup Name="DebugSourceFiles" Tool="Compiler">
+            <Task SourceFile="Source1.cpp"/>
+            <Task SourceFile="Source2.cpp"/>
+            <Task SourceFile="Source3.cpp"/>
+        </TaskGroup>
+        <Task DependsOn="DebugSourceFiles" Tool="Linker"/>
+    </TaskGroup>
+    <TaskGroup Name="BuildDebug" Env="Release">
+        <TaskGroup Name="DebugSourceFiles" Tool="Compiler">
+            <Task SourceFile="Source1.cpp"/>
+            <Task SourceFile="Source2.cpp"/>
+            <Task SourceFile="Source3.cpp"/>
+        </TaskGroup>
+        <Task DependsOn="DebugSourceFiles" Tool="Linker"/>
+    </TaskGroup>
+</Project>
+</BuildSet>

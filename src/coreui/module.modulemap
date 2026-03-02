@@ -1,0 +1,4 @@
+module _IrisUI {
+    header "uicore.hpp"
+    export *
+}

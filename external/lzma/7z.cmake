@@ -1,0 +1,1 @@
+set(_7Z_SOURCE meta7.cpp)

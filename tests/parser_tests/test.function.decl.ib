@@ -1,0 +1,13 @@
+function("tests" + test) { // not supported, only supports function("test")
+    namespace = "global"
+    args = { "msg", "target" }
+
+    if(isdict(arg.msg)) {
+
+    }
+
+    if(isstring(arg.target))
+    {
+        
+    }
+}

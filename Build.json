@@ -1,0 +1,25 @@
+{
+  "steps": [
+    {
+      "name": "Build Playground.app",
+      "type": "macos-bundle",
+      "with": {
+        "name": "Playground",
+        "identifier": "dev.swiftui.playground",
+        "version": "1.0.0",
+        "product": "Playground",
+        "output": ".build/Playground.app",
+        "additionalInfoPlistEntries": {
+          "CFBundleInfoDictionaryVersion": "6.0",
+          "CFBundleURLTypes": [
+            {
+              "CFBundleTypeRole": "Editor",
+              "CFBundleURLName": "",
+              "CFBundleURLSchemes": ["myswiftuiapp"]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

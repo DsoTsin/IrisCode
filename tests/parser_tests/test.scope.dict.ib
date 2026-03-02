@@ -1,0 +1,33 @@
+a = {} // empty dict
+
+b = {
+    c = 9
+    y = "xx"
+} // scope
+// access b
+// b.c
+// b.y
+
+/*
+c = {
+    "u" : {
+        "super" : 9
+    },
+    "conf" : "none",
+    "vec3" : [0,9,5]
+} // dict
+*/
+
+/* access c
+ c["u"]["super"]
+ c["conf"]
+ for var in pairs(c) {
+     var.key var.value
+ }
+*/
+
+d = {
+    c = call_super(name: "zen", value: 1) // function call
+} // scope
+// access d
+// d.c

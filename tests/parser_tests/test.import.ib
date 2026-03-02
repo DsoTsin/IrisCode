@@ -1,0 +1,4 @@
+import("//test.template.decl")
+
+import("//test.template.decl") //import error
+

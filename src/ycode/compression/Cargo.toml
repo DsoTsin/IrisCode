@@ -1,0 +1,17 @@
+[package]
+name = "compression"
+version = "0.0.1"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+#name = "compression"
+path = "lib.rs"
+
+[dependencies]
+libc = "0.2"
+lzma-rs = "0.3.0"
+lzma-sys = "0.1.20"
+lz4_flex = { version = "0.10" }
+lzfse_rust = { git = "https://github.com/shampoofactory/lzfse_rust.git" }
+libz-sys = { version = "1.1.0", default-features = false, features = ["libc"] }

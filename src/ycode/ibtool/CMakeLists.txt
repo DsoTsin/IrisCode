@@ -1,0 +1,1 @@
+yc_add_bin(ibtool SOURCES ibtool_main.cpp)

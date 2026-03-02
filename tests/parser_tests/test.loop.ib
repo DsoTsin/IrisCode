@@ -1,0 +1,22 @@
+for i = 0...8 {
+
+}
+
+for i in tests 
+{
+   // continue
+}
+
+// need parse dict
+for i in [
+    "ss", //string 
+    "uu" : { 
+        "8788" : true,
+        "sds" : 88 
+        } // dict
+    ] // array
+{
+
+  break
+}
+

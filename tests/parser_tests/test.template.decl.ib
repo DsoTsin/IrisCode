@@ -1,0 +1,7 @@
+template("hyrid") {
+
+    depends  = [ "//config:ss" ]
+    sources = invoker.sources
+    // next
+
+}

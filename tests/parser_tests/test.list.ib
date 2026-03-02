@@ -1,0 +1,8 @@
+//[ddf, "ddx", 2345]
+
+// accessor assign array
+c.f = [ffsd, "ddd"]
+
+// accessor assign empty array
+a["f"] = []
+

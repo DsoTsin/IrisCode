@@ -1,0 +1,263 @@
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000333)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000334)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000334)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000335)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000335)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000336)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000336)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000337)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000337)
++++++++++++++++++ iris::remote_vfs::get_file_security: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
++++++++++++++++++ iris::remote_vfs::get_file_security: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
++++++++++++++++++ iris::remote_vfs::get_file_security: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'(0xFAD1000000000338)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000339)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033A)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033B)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033A)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+[iris::remote_vps_dispatcher::create_process_for_agent] error: ???????
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033A)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe.Config'(0xFAD1000000000338)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033C)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033D)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033D)
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033E)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033F)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033E)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000340)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000033F)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000340)
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000341)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000340)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000342)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000341)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000343)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000342)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000343)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000343)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000344)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000344)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000345)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000345)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000346)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000346)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000347)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000348)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000348), 4096 bytes, offset=0
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000348), 5032 bytes, offset=421888
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000348), 4096 bytes, offset=417792
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD1000000000348), 422824 bytes, offset=4096
+***************** iris::remote_vfs::find_streams: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::find_streams: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034A)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034A)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034A)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034A)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034B)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034B)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034C)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034C)
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034D)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034E)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034D)
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034E)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+iris::remote_vfs::get_file_info: path: \192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe, error: ???????????
+$$$$$$$$$$$$$$$$$ iris::remote_vfs::set_file_attribs: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::set_file_time: '\192.168.50.208_20185\C\Users\pxtec\Desktop\unreal_mixdevice\cl.exe'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000034F)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000350)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000034F)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000350)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000034F)
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000350)
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000352)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 4096 bytes, offset=0
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000352), 86000 bytes, offset=0
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 16384 bytes, offset=387584
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000353)
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 16384 bytes, offset=371200
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000353)
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000354)
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 16384 bytes, offset=330240
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 3072 bytes, offset=600064
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000355)
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 7168 bytes, offset=574976
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000354)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000355)
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000356)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 16384 bytes, offset=444928
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 512 bytes, offset=598528
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000356)
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000357)
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 1024 bytes, offset=599040
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 16384 bytes, offset=481792
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::read_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000351), 16384 bytes, offset=465408
+[iris::remote_vps_dispatcher::create_process_for_agent] process (14516) exited with error code: 0xc0000139
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\cl.exe'(0xFAD100000000034E)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000357)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD1000000000357)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD100000000035A)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD100000000035A)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD100000000035B)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\VCRUNTIME140.dll'(0xFAD100000000035B)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000035C)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000035C)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000035C)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000035D)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000035D)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000035E)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000035E)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000035F)
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD100000000035F)
+***************** iris::remote_vfs::create_file: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::create_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000360)
+***************** iris::remote_vfs::get_file_info: '\192.168.50.208_20185\C\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'
+iris::remote_vfs::close_file: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\bin\HostX64\x64\MSVCP140.dll'(0xFAD1000000000360)

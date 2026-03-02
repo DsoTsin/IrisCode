@@ -1,0 +1,18 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "SelfDefine.h";
+
+[
+    uuid(551d88b0-b831-4283-a1cd-276559e49f28),
+    version(1.0)
+]
+
+interface RPCServer
+{
+    error_status_t GetServerName([out, size_is(len)]char *pszName,
+        [in]long len);
+    error_status_t Add([in]long num1,
+        [in]long num2,
+        [out]long* rtn);
+    error_status_t ShutDown();
+}

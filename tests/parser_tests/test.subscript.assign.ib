@@ -1,0 +1,12 @@
+args.prebuild = false
+
+args.postinstall = "ssc"
+
+args.install = 'ssc'
+
+args. install = nil
+
+args.template = 564
+
+print(msg: args['template'])
+

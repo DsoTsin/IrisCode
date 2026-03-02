@@ -1,0 +1,40 @@
+// accessor test
+a.c = 0
+a[10].vv = 2
+
+version = match(target) { "android" => 1, "ios"=>2 }
+
+match(arch)
+{
+	"x64" => {
+	
+	
+	},
+	"mips" => {},
+	_ => {}
+}
+
+match(arch)
+{
+	"arm" | "arm64" => {}
+}
+
+match(test+1) // binary op not supprted in match arg..
+{
+}
+
+match(test+"cc") // binary op
+{
+}
+
+match(a.b[0]) // accessor
+{
+}
+
+match(9 + (a.b[0] + c())) // literal + accessor + fn_call
+{
+}
+
+match(call_fn(str:"uuis")) { // fn call
+
+}

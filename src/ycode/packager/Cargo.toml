@@ -1,0 +1,31 @@
+[package]
+name = "ipak"
+version = "0.9.1"
+authors = ["zhouqin <zhouqin@haroyo.com>"]
+edition = "2021"
+license = "CUSTOM"
+resolver = "2"
+# Nightly toolchain
+rust-version = "1.58"
+
+[lib]
+name = "ipak"
+path = "lib.rs"
+crate-type = ["lib", "staticlib"]
+
+[[bin]]
+name = "packager"
+path = "bin.rs"
+
+[dependencies]
+bincode = "1.0.0"
+byteorder = "1.4.3"
+libc = "0.2"
+pathdiff = "0.2.1"
+serde_derive = "1.0.34"
+serde = { version = "1.0.130", features = ["derive"] }
+thiserror = "2.0"
+walkdir = "2"
+zstd = "0.13"
+memmap = "0.7.0"
+clap = { version = "4.1.7", features = ["derive"] }
