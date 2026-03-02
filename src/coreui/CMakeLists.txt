@@ -22,7 +22,9 @@ view/table_view.hpp
 view/dock_view.cc
 view/dock_view.hpp
 view/text_edit.cc
-view/text_edit.hpp)
+view/text_edit.hpp
+view/code_editor.cc
+view/code_editor.hpp)
 source_group("UI\\View" FILES ${CORE_UI_VIEW_SOURCES})
 source_group(yoga FILES ${yoga_SOURCES})
 add_library(core.ui ${CORE_UI_SOURCES} ${CORE_UI_VIEW_SOURCES} ${yoga_SOURCES})

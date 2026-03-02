@@ -53,6 +53,7 @@ class UICORE_API window : public ref_counted {
   
     virtual void show();
     virtual void draw();
+    virtual void draw(const ui::rect& dirty_rect);
 
     const ui::rect& frame() const;
 
@@ -71,6 +72,7 @@ class UICORE_API window : public ref_counted {
 
   protected:
     friend class iris::priv::app;
+    virtual bool on_native_event(uint32_t msg, uintptr_t w_param, intptr_t l_param, intptr_t* out_result);
     virtual bool on_window_pos_changed();
     virtual bool on_window_activate(bool active);
     virtual ~window();

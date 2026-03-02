@@ -14,10 +14,57 @@
 namespace iris {
 namespace priv {
 class view_impl;
+class window;
 }
 
 namespace ui {
 class view;
+class dock_view;
+
+enum class mouse_button : uint8_t {
+  none,
+  left,
+  right,
+  middle,
+  x1,
+  x2,
+  other,
+};
+
+enum class input_modifier : uint8_t {
+  shift = 1 << 0,
+  control = 1 << 1,
+  alt = 1 << 2,
+};
+
+constexpr uint8_t modifier_mask(input_modifier modifier) {
+  return static_cast<uint8_t>(modifier);
+}
+
+inline bool has_modifier(uint8_t modifiers, input_modifier modifier) {
+  return (modifiers & modifier_mask(modifier)) != 0;
+}
+
+struct mouse_event {
+  event_type type = event_type::mouse_moved;
+  mouse_button button = mouse_button::none;
+  point location_in_window;
+  point location_in_view;
+  float wheel_delta = 0.0f;
+  bool is_double_click = false;
+  uint8_t modifiers = 0;
+};
+
+struct key_event {
+  event_type type = event_type::key_down;
+  uint32_t key_code = 0;
+  uint32_t scan_code = 0;
+  uint32_t character = 0;
+  bool is_repeat = false;
+  bool is_system = false;
+  uint8_t modifiers = 0;
+};
+
 class view_controller {
 public:
   virtual ~view_controller() {}
@@ -56,11 +103,26 @@ public:
   virtual void remove_child(view* v);
 
   virtual view* hit_test(point const& p) const;
+  view* parent() const { return parent_; }
+
+  virtual bool mouse_down(const mouse_event& event);
+  virtual bool mouse_up(const mouse_event& event);
+  virtual bool mouse_move(const mouse_event& event);
+  virtual bool mouse_enter(const mouse_event& event);
+  virtual bool mouse_leave(const mouse_event& event);
+  virtual bool mouse_wheel(const mouse_event& event);
+  virtual bool key_down(const key_event& event);
+  virtual bool key_up(const key_event& event);
+  virtual bool key_char(const key_event& event);
+  virtual bool can_receive_focus() const { return true; }
+  virtual void on_focus_changed(bool focused);
 
   float width() const;
   view& width(float width);
   view& auto_width();
   float height() const;
+  view& fill_height(float percent);
+
   view& height(float height);
   view& auto_height();
   view& flex_dir(FlexDirection dir);
@@ -76,6 +138,7 @@ public:
 protected:
   void enable_measure();
   virtual size on_measure(MeasureMode mw, MeasureMode mh, const ui::size& sz);
+  YGNodeRef yoga_node() const;
 
   void mark_draw_dirty();
 
@@ -89,6 +152,8 @@ protected:
 
 private:
   friend class priv::view_impl;
+  friend class priv::window;
+  friend class dock_view;
 
   priv::view_impl* d_;
 };

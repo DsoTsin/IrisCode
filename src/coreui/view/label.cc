@@ -46,12 +46,12 @@ void label::draw(const rect& dirty_rect) {
   //  SkRect bounds;
   //font.measureText(text, strlen(text), SkTextEncoding::kUTF8, &bounds);
   //bounds.offset(x, y);
-  SkPaint linePaint;
-  linePaint.setColor(SK_ColorBLUE);
-  linePaint.setStyle(SkPaint::kStroke_Style);
-  gfx_ctx_->canvas()->drawRect(SkRect{rect.left, rect.top, rect.left + rect.width,
-                                      rect.top+rect.height},
-                               linePaint);
+  //SkPaint linePaint;
+  //linePaint.setColor(SK_ColorBLUE);
+  //linePaint.setStyle(SkPaint::kStroke_Style);
+  //gfx_ctx_->canvas()->drawRect(SkRect{rect.left, rect.top, rect.left + rect.width,
+  //                                    rect.top+rect.height},
+  //                             linePaint);
 }
 
 label& label::text(const string& text) {

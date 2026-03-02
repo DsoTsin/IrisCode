@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.18)
-project (IrisBuild 
+project (IrisCode 
 	LANGUAGES 
 		C CXX ASM
 )

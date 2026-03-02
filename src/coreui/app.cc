@@ -839,6 +839,13 @@ LRESULT app::window_proc(HWND hwnd, UINT msg, WPARAM w_param, LPARAM l_param) {
   iris::app* app = iris::app::shared();
   auto win_iter = app->d->windows.find(hwnd);
   auto wm = FromUInt(msg);
+  if (win_iter != app->d->windows.end()) {
+    intptr_t native_result = 0;
+    if (win_iter->second->on_native_event(msg, static_cast<uintptr_t>(w_param),
+                                          static_cast<intptr_t>(l_param), &native_result)) {
+      return static_cast<LRESULT>(native_result);
+    }
+  }
   switch (wm) {
   case win_msg::input_lang_change_request:
   case win_msg::input_lang_change:
@@ -850,10 +857,18 @@ LRESULT app::window_proc(HWND hwnd, UINT msg, WPARAM w_param, LPARAM l_param) {
     return DefWindowProc(hwnd, msg, w_param, l_param);
     break;
   case win_msg::paint: {
+    PAINTSTRUCT ps = {};
+    ::BeginPaint(hwnd, &ps);
     if (win_iter != app->d->windows.end()) {
-      win_iter->second->draw();
+      const ui::rect dirty_rect{
+          (float)ps.rcPaint.left,
+          (float)ps.rcPaint.top,
+          (float)(ps.rcPaint.right - ps.rcPaint.left),
+          (float)(ps.rcPaint.bottom - ps.rcPaint.top),
+      };
+      win_iter->second->draw(dirty_rect);
     }
-    //return DefWindowProc(hwnd, msg, w_param, l_param);
+    ::EndPaint(hwnd, &ps);
     break;
   }
   case win_msg::get_min_max_info: {
@@ -956,12 +971,17 @@ LRESULT app::window_proc(HWND hwnd, UINT msg, WPARAM w_param, LPARAM l_param) {
       break;
     }
     if (win_iter != app->d->windows.end()) {
-      const bool bWasMaximized = (w_param == SIZE_MAXIMIZED);
-      const bool bWasRestored = (w_param == SIZE_RESTORED);
       auto nw = (int)(short)(LOWORD(l_param));
       auto nh = (int)(short)(HIWORD(l_param));
-      (*win_iter).second->resize(nw, nh);
-      (*win_iter).second->on_window_pos_changed();
+      auto window_ref = (*win_iter).second;
+      if (w_param != SIZE_MINIMIZED && nw > 0 && nh > 0) {
+        window_ref->resize(nw, nh);
+        window_ref->on_window_pos_changed();
+        // Defer repaint to WM_PAINT queue to avoid synchronous resize-time flicker.
+        ::InvalidateRect(hwnd, nullptr, FALSE);
+      } else {
+        window_ref->on_window_pos_changed();
+      }
       return 0;
     }
     break;

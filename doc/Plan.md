@@ -1,0 +1,7 @@
+- Implement UI Framework that mimics iOS UIKits' API
+- Use Skia C++ Api to provide canvas ability
+- App framework and input events processing should be cross-platform implemented
+- Layout should based on `external/yoga` Yoga layout implementation
+- Implement TextEdit widget inherited iris::ui::view
+- Implement CodeEditor with syntax highlighting feature
+- Implement dockable panel on window

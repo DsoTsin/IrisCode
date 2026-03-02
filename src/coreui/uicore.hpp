@@ -5,6 +5,9 @@
 #include "window.hpp"
 #include "view.hpp"
 #include "graphics_context.hpp"
+#include "view/text_edit.hpp"
+#include "view/code_editor.hpp"
+#include "view/dock_view.hpp"
 
 namespace iris {
     namespace ui {

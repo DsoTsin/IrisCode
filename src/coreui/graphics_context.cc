@@ -17,6 +17,7 @@
 
 #include "include/core/SkCanvas.h"
 #include "include/core/SkColorSpace.h"
+#include <cmath>
 
 #ifdef _WIN32
 #include "winrt/windows.ui.composition.h"
@@ -337,10 +338,12 @@ public:
 
   void resize(int width, int height);
   void flush();
-  void synchronize();
+  void synchronize(const ui::rect* dirty_rect);
+  ui::rect expand_dirty_rect(const ui::rect& dirty_rect) const;
 
   void on_window_pos_changed();
   void on_window_activate(bool active);
+  void on_live_resize_changed(bool active);
   void flush_dwm_compositor();
 
 private:
@@ -355,6 +358,8 @@ private:
   winrt::Windows::UI::Composition::SpriteVisual content_visual_{nullptr};
   winrt::Windows::UI::Composition::CompositionClip clip_{nullptr};
   winrt::Windows::UI::Composition::CompositionRoundedRectangleGeometry clip_geom_{nullptr};
+  bool window_active_ = true;
+  bool live_resizing_ = false;
 #endif
   sk_sp<dwm_compositor> compositor_;
   sk_sp<ui::win::compositor> win_compositor_;
@@ -363,9 +368,79 @@ private:
   UINT frame_index_ = 0;
   UINT width_ = 0, height_ = 0;
   vector<sk_sp<SkSurface>> swap_surfaces_;
+  RECT backbuffer_damage_[BUFFERRED_FRAMES]{};
+  bool backbuffer_damage_valid_[BUFFERRED_FRAMES]{};
 
   friend class ui::graphics_context;
 };
+
+namespace {
+constexpr float kForceFullDamageRatio = 0.85f;
+
+RECT make_bounds_rect(UINT width, UINT height) {
+  RECT r{};
+  r.left = 0;
+  r.top = 0;
+  r.right = static_cast<LONG>(width);
+  r.bottom = static_cast<LONG>(height);
+  return r;
+}
+
+bool is_empty_rect(const RECT& r) {
+  return r.right <= r.left || r.bottom <= r.top;
+}
+
+RECT intersect_rect(const RECT& a, const RECT& b) {
+  RECT r{};
+  r.left = max(a.left, b.left);
+  r.top = max(a.top, b.top);
+  r.right = min(a.right, b.right);
+  r.bottom = min(a.bottom, b.bottom);
+  if (is_empty_rect(r)) {
+    return RECT{};
+  }
+  return r;
+}
+
+RECT union_rect(const RECT& a, const RECT& b) {
+  if (is_empty_rect(a)) {
+    return b;
+  }
+  if (is_empty_rect(b)) {
+    return a;
+  }
+  RECT r{};
+  r.left = min(a.left, b.left);
+  r.top = min(a.top, b.top);
+  r.right = max(a.right, b.right);
+  r.bottom = max(a.bottom, b.bottom);
+  return r;
+}
+
+float rect_area(const RECT& r) {
+  if (is_empty_rect(r)) {
+    return 0.0f;
+  }
+  return static_cast<float>(r.right - r.left) * static_cast<float>(r.bottom - r.top);
+}
+
+RECT sanitize_dirty_rect(const ui::rect& dirty_rect, const RECT& bounds) {
+  RECT r{};
+  r.left = static_cast<LONG>(floorf(dirty_rect.left));
+  r.top = static_cast<LONG>(floorf(dirty_rect.top));
+  r.right = static_cast<LONG>(ceilf(dirty_rect.right()));
+  r.bottom = static_cast<LONG>(ceilf(dirty_rect.bottom()));
+  return intersect_rect(r, bounds);
+}
+
+ui::rect to_ui_rect(const RECT& r) {
+  if (is_empty_rect(r)) {
+    return {};
+  }
+  return ui::rect{static_cast<float>(r.left), static_cast<float>(r.top),
+                  static_cast<float>(r.right - r.left), static_cast<float>(r.bottom - r.top)};
+}
+} // namespace
 } // namespace priv
 
 namespace ui {
@@ -381,8 +456,8 @@ graphics_context::~graphics_context() {
 void graphics_context::resize(int width, int height) {
   d->resize(width, height);
 }
-void graphics_context::synchronize() {
-  d->synchronize();
+void graphics_context::synchronize(const ui::rect* dirty_rect) {
+  d->synchronize(dirty_rect);
 }
 void graphics_context::flush() {
   d->flush();
@@ -390,11 +465,17 @@ void graphics_context::flush() {
 canvas* graphics_context::canvas() {
   return d->canvas();
 }
+ui::rect graphics_context::expand_dirty_rect(const ui::rect& dirty_rect) const {
+  return d->expand_dirty_rect(dirty_rect);
+}
 void graphics_context::on_window_pos_changed() {
   d->on_window_pos_changed();
 }
 void graphics_context::on_window_activate(bool active) {
   d->on_window_activate(active);
+}
+void graphics_context::on_live_resize_changed(bool active) {
+  d->on_live_resize_changed(active);
 }
 window* graphics_context::window() const {
   return d->wind_;
@@ -406,6 +487,12 @@ graphics_context::graphics_context(ui::window* w, bool gpu) : wind_(w) {
   if (gpu) {
     auto& gpu_dev = gpu_device::get();
     auto frame = w->frame();
+    width_ = static_cast<UINT>(max(frame.width, 0.0f));
+    height_ = static_cast<UINT>(max(frame.height, 0.0f));
+    for (UINT i = 0; i < BUFFERRED_FRAMES; ++i) {
+      backbuffer_damage_[i] = RECT{};
+      backbuffer_damage_valid_[i] = false;
+    }
     gr_cp<IDXGIFactory4> factory;
     CreateDXGIFactory1(IID_PPV_ARGS(&factory));
 
@@ -498,7 +585,13 @@ void graphics_context::resize(int width, int height) {
   if (swap_chain_) {
     auto& gpu_dev = gpu_device::get();
     swap_surfaces_.clear();
-    swap_surfaces_.resize(2);
+    swap_surfaces_.resize(BUFFERRED_FRAMES);
+    width_ = static_cast<UINT>(max(width, 0));
+    height_ = static_cast<UINT>(max(height, 0));
+    for (UINT i = 0; i < BUFFERRED_FRAMES; ++i) {
+      backbuffer_damage_[i] = RECT{};
+      backbuffer_damage_valid_[i] = false;
+    }
 
     // need sync CPU
     GrFlushInfo flushInfo;
@@ -574,10 +667,61 @@ void graphics_context::resize(int width, int height) {
   }
 }
 
-void graphics_context::synchronize() {
+ui::rect graphics_context::expand_dirty_rect(const ui::rect& dirty_rect) const {
+  const RECT bounds = make_bounds_rect(width_, height_);
+  RECT expanded = sanitize_dirty_rect(dirty_rect, bounds);
+  if (is_empty_rect(expanded)) {
+    return {};
+  }
+  if (!backbuffer_damage_valid_[frame_index_]) {
+    return to_ui_rect(bounds);
+  }
+
+  for (UINT i = 0; i < BUFFERRED_FRAMES; ++i) {
+    if (i == frame_index_ || !backbuffer_damage_valid_[i]) {
+      continue;
+    }
+    expanded = union_rect(expanded, intersect_rect(backbuffer_damage_[i], bounds));
+  }
+
+  const float total_area = rect_area(bounds);
+  if (total_area > 0.0f && rect_area(expanded) >= total_area * kForceFullDamageRatio) {
+    expanded = bounds;
+  }
+  return to_ui_rect(expanded);
+}
+
+void graphics_context::synchronize(const ui::rect* dirty_rect) {
   if (swap_chain_) {
     auto& gpu_dev = gpu_device::get();
-    swap_chain_->Present(1, 0);
+    const RECT bounds = make_bounds_rect(width_, height_);
+    const bool force_full_present = (dirty_rect == nullptr) || !backbuffer_damage_valid_[frame_index_];
+    RECT present_damage = bounds;
+    if (!force_full_present) {
+      present_damage = sanitize_dirty_rect(*dirty_rect, bounds);
+      if (is_empty_rect(present_damage)) {
+        return;
+      }
+    }
+
+    HRESULT present_hr = S_OK;
+    if (!force_full_present) {
+      DXGI_PRESENT_PARAMETERS present_params{};
+      present_params.DirtyRectsCount = 1;
+      present_params.pDirtyRects = &present_damage;
+      present_hr = swap_chain_->Present1(1, 0, &present_params);
+      if (FAILED(present_hr)) {
+        present_hr = swap_chain_->Present(1, 0);
+      }
+    } else {
+      present_hr = swap_chain_->Present(1, 0);
+    }
+    if (FAILED(present_hr)) {
+      return;
+    }
+
+    backbuffer_damage_[frame_index_] = present_damage;
+    backbuffer_damage_valid_[frame_index_] = true;
 
     const UINT64 currentFenceValue = fence_value_;
 
@@ -615,7 +759,7 @@ void graphics_context::on_window_pos_changed() {
   //XB_LOGI("window pos change");
   bool is_max = !!::IsZoomed((HWND)wind_->native_handle());
 #if ENABLE_WINCOMP
-  blur_visual_.IsVisible(!is_max);
+  blur_visual_.IsVisible(!is_max && window_active_ && !live_resizing_);
   //clip_geom_.CornerRadius({0.f,0.f});
 #else
   if (compositor_) {
@@ -632,8 +776,9 @@ void graphics_context::on_window_pos_changed() {
 void graphics_context::on_window_activate(bool active) {
   XB_LOGI("activate : %d", active? 1: 0);
 #if ENABLE_WINCOMP
+  window_active_ = active;
   bool is_max = !!::IsZoomed((HWND)wind_->native_handle());
-  blur_visual_.IsVisible(!is_max && active);
+  blur_visual_.IsVisible(!is_max && window_active_ && !live_resizing_);
 #else
   // flush compositor
   if (compositor_) {
@@ -644,6 +789,16 @@ void graphics_context::on_window_activate(bool active) {
       compositor_->fallback();
     }
   }
+#endif
+}
+
+void graphics_context::on_live_resize_changed(bool active) {
+#if ENABLE_WINCOMP
+  live_resizing_ = active;
+  bool is_max = !!::IsZoomed((HWND)wind_->native_handle());
+  blur_visual_.IsVisible(!is_max && window_active_ && !live_resizing_);
+#else
+  (void)active;
 #endif
 }
 dwm_compositor::dwm_compositor(HWND hwnd, gr_cp<IDXGISwapChain3> swapchain)
