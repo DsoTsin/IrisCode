@@ -20,6 +20,7 @@ class SkCanvas;
 
 namespace iris {
 namespace ui {
+class window;
 //@see
 // https://github.com/phracker/MacOSX-SDKs/blob/master/MacOSX11.3.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSEvent.h
 enum class event_type : uint8_t {
@@ -113,6 +114,14 @@ enum class button_state : uint8_t {
   hovered,
   pressed,
   disabled,
+};
+
+struct event {
+  event_type type;
+  uint16_t key_code; // for key events
+  uint8_t modifiers; // bitmask of modifier keys
+  point location; // for mouse events
+  window* target_window; // the window that is the target of the event
 };
 
 typedef SkFont font;

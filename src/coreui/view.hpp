@@ -20,6 +20,7 @@ class window;
 namespace ui {
 class view;
 class dock_view;
+class dock_window;
 
 enum class mouse_button : uint8_t {
   none,
@@ -101,9 +102,13 @@ public:
 
   virtual void add_child(view* v);
   virtual void remove_child(view* v);
+  virtual void detach_child(view* v);
 
   virtual view* hit_test(point const& p) const;
   view* parent() const { return parent_; }
+  window* owning_window() const;
+  rect screen_rect() const;
+  YGNodeRef layout_node() const;
 
   virtual bool mouse_down(const mouse_event& event);
   virtual bool mouse_up(const mouse_event& event);
@@ -116,6 +121,7 @@ public:
   virtual bool key_char(const key_event& event);
   virtual bool can_receive_focus() const { return true; }
   virtual void on_focus_changed(bool focused);
+  virtual rect dirty_rect() const;
 
   float width() const;
   view& width(float width);

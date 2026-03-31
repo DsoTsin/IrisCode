@@ -1,10 +1,11 @@
-#include "label.hpp"
+ï»¿#include "label.hpp"
+#include "include/core/SkCanvas.h"
+#include "include/core/SkColor.h"
 #include "include/core/SkFont.h"
 #include "include/core/SkFontMetrics.h"
-#include "include/core/SkFontTypes.h"
 #include "include/core/SkFontMgr.h"
+#include "include/core/SkFontTypes.h"
 #include "include/ports/SkTypeface_win.h"
-#include "include/core/SkCanvas.h"
 
 namespace iris {
 namespace ui {
@@ -22,36 +23,24 @@ label::~label() {
 
 void label::draw(const rect& dirty_rect) {
   view::draw(dirty_rect);
-  // Label text drawing implementation
-  auto rect = get_layout_rect();
+  if (!gfx_ctx_) {
+    return;
+  }
+  auto* canvas = gfx_ctx_->canvas();
+  if (!canvas) {
+    return;
+  }
 
-  
+  const auto bounds = get_layout_rect();
   SkFontMetrics metrics;
   font_->getMetrics(&metrics);
-
-  // ¼ÆËã»ùÏßÎ»ÖÃ£¨¿¼ÂÇ ascent ºÍ descent£©
-  SkScalar textHeight = metrics.fDescent - metrics.fAscent;
-  SkScalar baseline = rect.top - /*(*/metrics.fAscent/* + metrics.fDescent) / 2*/;
-
-  // ¼ÆËãÆðÊ¼ x ×ø±ê£¨Ë®Æ½¾ÓÖÐ£©
-  //SkScalar startX = centerX - textWidth / 2;
+  const SkScalar baseline = bounds.top - metrics.fAscent;
 
   SkPaint paint;
-  paint.setColor(SK_ColorWHITE);
+  paint.setColor(SkColorSetARGB(text_color_.a, text_color_.r, text_color_.g, text_color_.b));
   paint.setAntiAlias(true);
-  gfx_ctx_->canvas()->drawSimpleText(text_.c_str(), text_.size(), SkTextEncoding::kUTF8, rect.left,
-                                     baseline, *font_, paint);
-
-  
-  //  SkRect bounds;
-  //font.measureText(text, strlen(text), SkTextEncoding::kUTF8, &bounds);
-  //bounds.offset(x, y);
-  //SkPaint linePaint;
-  //linePaint.setColor(SK_ColorBLUE);
-  //linePaint.setStyle(SkPaint::kStroke_Style);
-  //gfx_ctx_->canvas()->drawRect(SkRect{rect.left, rect.top, rect.left + rect.width,
-  //                                    rect.top+rect.height},
-  //                             linePaint);
+  canvas->drawSimpleText(text_.c_str(), text_.size(), SkTextEncoding::kUTF8, bounds.left, baseline,
+                         *font_, paint);
 }
 
 label& label::text(const string& text) {
@@ -91,28 +80,21 @@ color label::text_color() const {
 }
 
 size label::on_measure(MeasureMode wm, MeasureMode hm, const size& sz) {
-  auto fm = SkFontMgr_New_GDI();
-  auto nf = fm->countFamilies();
-  auto tyf = fm->legacyMakeTypeface("Segoe UI", SkFontStyle::Normal());
-  font_->setSize(font_size_);
-  font_->setTypeface(tyf);
+  (void)wm;
+  (void)hm;
+  (void)sz;
 
-  SkFontMetrics metrics;
-  font_->getMetrics(&metrics);
-  SkScalar ascent = metrics.fAscent;
-  SkScalar descent = metrics.fDescent;
-  SkScalar leading = metrics.fLeading;
-  SkScalar xHeight = metrics.fXHeight;
-  SkScalar lineHeight = descent - ascent + leading;
+  auto fm = SkFontMgr_New_GDI();
+  auto typeface = fm ? fm->legacyMakeTypeface("Segoe UI", SkFontStyle::Normal()) : nullptr;
+  font_->setSize(font_size_);
+  if (typeface) {
+    font_->setTypeface(typeface);
+  }
 
   SkRect bounds;
-  SkScalar width
-      = font_->measureText(text_.c_str(), text_.size(), SkTextEncoding::kUTF8, &bounds, nullptr);
-
-  SkDebugf("Text width: %f, Bounds: [%f, %f, %f, %f]\n", width, bounds.left(), bounds.top(),
-           bounds.right(), bounds.bottom());
+  font_->measureText(text_.c_str(), text_.size(), SkTextEncoding::kUTF8, &bounds, nullptr);
   return {bounds.width(), bounds.height()};
-  }
+}
 
 } // namespace ui
 } // namespace iris

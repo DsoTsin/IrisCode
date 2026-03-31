@@ -10,6 +10,7 @@ This is a cross platform pixel-acurate UI framework.
 - Basic canvas drawing with Skia API
 - Window/Menu management
 - Swift bindings
+- SwiftUI compatible interface
 
 ## Rules
 
@@ -19,7 +20,7 @@ This is a cross platform pixel-acurate UI framework.
 - UI events' definitions corresponds UIKit events
 - Make build.bat passed after code change
 - All api changes should be considered to support cross platform include Windows, Linux and macOS
-
+- UI Framework platform dependent code placed in src/coreui/platform/**(os platform)**
 
 # Instructions
 

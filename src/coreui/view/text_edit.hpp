@@ -17,6 +17,7 @@ public:
   virtual bool key_down(const key_event& event) override;
   virtual bool key_char(const key_event& event) override;
   virtual bool can_receive_focus() const override { return editable_; }
+  virtual void on_focus_changed(bool focused) override;
 
   void set_text(const string& text);
   string text() const;
@@ -45,8 +46,13 @@ public:
 
 protected:
   virtual size on_measure(MeasureMode wm, MeasureMode hm, const size& sz) override;
+  virtual bool should_draw_caret() const;
   vector<string> lines() const;
   pair<size_t, size_t> cursor_line_column() const;
+  void reset_caret_blink();
+  void remember_cursor_position();
+  void start_caret_blink_timer();
+  void stop_caret_blink_timer();
 
 protected:
   string text_;
@@ -57,6 +63,11 @@ protected:
   size_t cursor_pos_ = 0;
   size_t selection_start_ = 0;
   size_t selection_end_ = 0;
+  size_t last_edit_pos_ = 0;
+  bool has_last_edit_pos_ = false;
+  bool focused_ = false;
+  bool caret_visible_ = false;
+  uint64_t caret_timer_id_ = 0;
   function<void(const string&)> on_text_changed_;
 };
 

@@ -1,10 +1,14 @@
 #pragma once
 
 #include "uidefs.hpp"
+#include <functional>
 
 #define ENABLE_MICA 0
 
 namespace iris {
+namespace platform::win32 {
+class access;
+}
 namespace priv {
 class app;
 class window;
@@ -52,10 +56,21 @@ class UICORE_API window : public ref_counted {
     virtual void set_delegate();
   
     virtual void show();
+    virtual void close();
+    virtual bool activates_on_show() const;
+    virtual bool paints_synchronously_on_show() const;
+    virtual bool uses_fancy_border() const;
+    virtual bool uses_window_compositor() const;
+    virtual void cancel_interaction();
+    virtual void request_redraw();
+    virtual void request_redraw(const ui::rect& dirty_rect);
     virtual void draw();
     virtual void draw(const ui::rect& dirty_rect);
+    virtual uint64_t start_timer(uint32_t interval_ms, function<void()> callback);
+    virtual void stop_timer(uint64_t timer_id);
 
     const ui::rect& frame() const;
+    ui::rect content_rect() const;
 
     void set_border_width(float width);
     float border_width() const;
@@ -72,6 +87,7 @@ class UICORE_API window : public ref_counted {
 
   protected:
     friend class iris::priv::app;
+    friend class iris::platform::win32::access;
     virtual bool on_native_event(uint32_t msg, uintptr_t w_param, intptr_t l_param, intptr_t* out_result);
     virtual bool on_window_pos_changed();
     virtual bool on_window_activate(bool active);

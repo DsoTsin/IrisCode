@@ -1,5 +1,7 @@
 #include "text_edit.hpp"
 
+#include "../window.hpp"
+
 #include "include/core/SkCanvas.h"
 #include "include/core/SkFont.h"
 #include "include/core/SkFontMetrics.h"
@@ -27,13 +29,16 @@ constexpr uint32_t kKeyRight = 0x27;
 constexpr uint32_t kKeyEnd = 0x23;
 constexpr uint32_t kKeyDelete = 0x2E;
 constexpr uint32_t kKeyA = 0x41;
+constexpr uint32_t kCaretBlinkIntervalMs = 530;
 } // namespace
 
 text_edit::text_edit(view* parent) : view(parent) {
   enable_measure();
 }
 
-text_edit::~text_edit() {}
+text_edit::~text_edit() {
+  stop_caret_blink_timer();
+}
 
 void text_edit::draw(const rect& dirty_rect) {
   view::draw(dirty_rect);
@@ -95,7 +100,7 @@ void text_edit::draw(const rect& dirty_rect) {
     }
   }
 
-  if (editable_) {
+  if (should_draw_caret()) {
     const auto [line_index, column] = cursor_line_column();
     if (line_index < rendered_lines.size()) {
       const auto& line = rendered_lines[line_index];
@@ -118,7 +123,7 @@ bool text_edit::mouse_down(const mouse_event& event) {
   if (event.button != mouse_button::left) {
     return false;
   }
-  move_cursor(text_.size());
+  reset_caret_blink();
   return true;
 }
 
@@ -178,12 +183,34 @@ bool text_edit::key_char(const key_event& event) {
   return true;
 }
 
+void text_edit::on_focus_changed(bool focused) {
+  focused_ = focused;
+  if (focused_) {
+    if (has_last_edit_pos_) {
+      move_cursor(last_edit_pos_);
+    } else {
+      move_cursor(cursor_pos_);
+    }
+    reset_caret_blink();
+    start_caret_blink_timer();
+    return;
+  }
+
+  stop_caret_blink_timer();
+  caret_visible_ = false;
+  mark_draw_dirty();
+}
+
 void text_edit::set_text(const string& text) {
   if (text_ != text) {
     text_ = text;
     cursor_pos_ = text_.size();
     selection_start_ = cursor_pos_;
     selection_end_ = cursor_pos_;
+    remember_cursor_position();
+    reset_caret_blink();
+    mark_layout_dirty();
+    mark_draw_dirty();
     if (on_text_changed_) {
       on_text_changed_(text_);
     }
@@ -196,6 +223,7 @@ string text_edit::text() const {
 
 void text_edit::set_placeholder(const string& placeholder) {
   placeholder_ = placeholder;
+  mark_draw_dirty();
 }
 
 string text_edit::placeholder() const {
@@ -204,6 +232,8 @@ string text_edit::placeholder() const {
 
 void text_edit::set_font_size(float size) {
   font_size_ = size > 6.0f ? size : 6.0f;
+  mark_layout_dirty();
+  mark_draw_dirty();
 }
 
 float text_edit::font_size() const {
@@ -211,7 +241,18 @@ float text_edit::font_size() const {
 }
 
 void text_edit::set_editable(bool editable) {
+  if (editable_ == editable) {
+    return;
+  }
   editable_ = editable;
+  if (!editable_) {
+    stop_caret_blink_timer();
+    caret_visible_ = false;
+  } else if (focused_) {
+    reset_caret_blink();
+    start_caret_blink_timer();
+  }
+  mark_draw_dirty();
 }
 
 bool text_edit::editable() const {
@@ -219,7 +260,12 @@ bool text_edit::editable() const {
 }
 
 void text_edit::set_word_wrap(bool wrap) {
+  if (word_wrap_ == wrap) {
+    return;
+  }
   word_wrap_ = wrap;
+  mark_layout_dirty();
+  mark_draw_dirty();
 }
 
 bool text_edit::word_wrap() const {
@@ -241,6 +287,10 @@ void text_edit::insert_text(const string& text) {
   cursor_pos_ += text.size();
   selection_start_ = cursor_pos_;
   selection_end_ = cursor_pos_;
+  remember_cursor_position();
+  reset_caret_blink();
+  mark_layout_dirty();
+  mark_draw_dirty();
   if (on_text_changed_) {
     on_text_changed_(text_);
   }
@@ -256,6 +306,10 @@ void text_edit::delete_selection() {
   cursor_pos_ = start;
   selection_start_ = start;
   selection_end_ = start;
+  remember_cursor_position();
+  reset_caret_blink();
+  mark_layout_dirty();
+  mark_draw_dirty();
   if (on_text_changed_) {
     on_text_changed_(text_);
   }
@@ -265,12 +319,18 @@ void text_edit::select_all() {
   selection_start_ = 0;
   selection_end_ = text_.size();
   cursor_pos_ = selection_end_;
+  remember_cursor_position();
+  reset_caret_blink();
+  mark_draw_dirty();
 }
 
 void text_edit::move_cursor(size_t pos) {
   cursor_pos_ = clamp_index(pos, text_.size());
   selection_start_ = cursor_pos_;
   selection_end_ = cursor_pos_;
+  remember_cursor_position();
+  reset_caret_blink();
+  mark_draw_dirty();
 }
 
 size_t text_edit::cursor_pos() const {
@@ -292,6 +352,10 @@ void text_edit::backspace() {
   --cursor_pos_;
   selection_start_ = cursor_pos_;
   selection_end_ = cursor_pos_;
+  remember_cursor_position();
+  reset_caret_blink();
+  mark_layout_dirty();
+  mark_draw_dirty();
   if (on_text_changed_) {
     on_text_changed_(text_);
   }
@@ -311,6 +375,10 @@ void text_edit::delete_forward() {
   text_.erase(cursor_pos_, 1);
   selection_start_ = cursor_pos_;
   selection_end_ = cursor_pos_;
+  remember_cursor_position();
+  reset_caret_blink();
+  mark_layout_dirty();
+  mark_draw_dirty();
   if (on_text_changed_) {
     on_text_changed_(text_);
   }
@@ -343,6 +411,10 @@ size text_edit::on_measure(MeasureMode, MeasureMode, const size& sz) {
       measured_width + 16.0f,
       line_height * rendered_lines.size() + 12.0f,
   };
+}
+
+bool text_edit::should_draw_caret() const {
+  return editable_ && focused_ && caret_visible_;
 }
 
 vector<string> text_edit::lines() const {
@@ -380,6 +452,51 @@ pair<size_t, size_t> text_edit::cursor_line_column() const {
     }
   }
   return {line, column};
+}
+
+void text_edit::reset_caret_blink() {
+  const bool next_visible = editable_ && focused_;
+  if (caret_visible_ == next_visible) {
+    return;
+  }
+  caret_visible_ = next_visible;
+  mark_draw_dirty();
+}
+
+void text_edit::remember_cursor_position() {
+  last_edit_pos_ = clamp_index(cursor_pos_, text_.size());
+  has_last_edit_pos_ = true;
+}
+
+void text_edit::start_caret_blink_timer() {
+  if (!editable_ || !focused_ || caret_timer_id_ != 0) {
+    return;
+  }
+
+  auto* wnd = owning_window();
+  if (!wnd) {
+    return;
+  }
+
+  caret_timer_id_ = wnd->start_timer(kCaretBlinkIntervalMs, [this]() {
+    if (!editable_ || !focused_) {
+      stop_caret_blink_timer();
+      return;
+    }
+    caret_visible_ = !caret_visible_;
+    mark_draw_dirty();
+  });
+}
+
+void text_edit::stop_caret_blink_timer() {
+  if (caret_timer_id_ == 0) {
+    return;
+  }
+
+  if (auto* wnd = owning_window()) {
+    wnd->stop_timer(caret_timer_id_);
+  }
+  caret_timer_id_ = 0;
 }
 
 } // namespace ui

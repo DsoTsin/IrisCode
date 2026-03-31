@@ -5,6 +5,8 @@ add_ib_test(rpc_test_client SOURCES rpc_client.cc LIBRARIES common)
 add_ib_test(machine_state SOURCES machine_state.cc LIBRARIES common)
 add_ib_test(gui_test SOURCES gui_test.cc LIBRARIES common core.ui)
 add_ib_test(code_editor_test SOURCES code_editor_test.cc LIBRARIES common core.ui)
+add_ib_test(dock_drag_test SOURCES dock_drag_test.cc LIBRARIES common core.ui)
+add_ib_test(dock_native_drag_smoke_test SOURCES dock_native_drag_smoke_test.cc LIBRARIES common core.ui)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 if(WIN32)

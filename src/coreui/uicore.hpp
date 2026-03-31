@@ -3,6 +3,7 @@
 #include "uidefs.hpp"
 #include "app.hpp"
 #include "window.hpp"
+#include "dock_window.hpp"
 #include "view.hpp"
 #include "graphics_context.hpp"
 #include "view/text_edit.hpp"

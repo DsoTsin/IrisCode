@@ -123,6 +123,10 @@ extern "C" long _InterlockedCompareExchange(long volatile* Dest, long Exchange, 
 			if (ptr_)
 				ptr_->retain();
 		}
+		ref_ptr(ref_ptr<T>&& Other) noexcept
+			: ptr_(Other.ptr_) {
+			Other.ptr_ = nullptr;
+		}
 		ref_ptr() : ptr_(nullptr) {}
 		~ref_ptr()
 		{
@@ -151,6 +155,16 @@ extern "C" long _InterlockedCompareExchange(long volatile* Dest, long Exchange, 
 			}
 			return *this;
 		}
+		ref_ptr& operator=(ref_ptr&& Other) noexcept {
+			if (&Other != this) {
+				if (ptr_) {
+					ptr_->release();
+				}
+				ptr_ = Other.ptr_;
+				Other.ptr_ = nullptr;
+			}
+			return *this;
+		}
 		T* get() const { return ptr_; }
 		T** getAddressOf() { return &ptr_;}
 	private:
@@ -165,6 +179,9 @@ extern "C" long _InterlockedCompareExchange(long volatile* Dest, long Exchange, 
       weak_ptr(weak_ptr<T> const& Other) : ptr_(Other.ptr_) {
         if (ptr_)
           ptr_->retain_internal();
+      }
+      weak_ptr(weak_ptr<T>&& Other) noexcept : ptr_(Other.ptr_) {
+        Other.ptr_ = nullptr;
       }
       weak_ptr() : ptr_(nullptr) {}
       ~weak_ptr() {
@@ -189,6 +206,16 @@ extern "C" long _InterlockedCompareExchange(long volatile* Dest, long Exchange, 
         typedef weak_ptr<T> ThisType;
         if (&Other != this) {
           ThisType(Other).swap(*this);
+        }
+        return *this;
+      }
+      weak_ptr& operator=(weak_ptr&& Other) noexcept {
+        if (&Other != this) {
+          if (ptr_) {
+            ptr_->release_internal();
+          }
+          ptr_ = Other.ptr_;
+          Other.ptr_ = nullptr;
         }
         return *this;
       }

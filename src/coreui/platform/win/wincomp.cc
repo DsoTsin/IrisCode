@@ -3,7 +3,7 @@
 #include <unknwn.h>
 
 #include "wincomp.hpp"
-#include "../window.hpp"
+#include "../../window.hpp"
 
 #include <DispatcherQueue.h>
 #include <windows.ui.composition.h>

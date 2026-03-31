@@ -22,6 +22,7 @@ public:
   void on_window_pos_changed();
   void on_window_activate(bool active);
   void on_live_resize_changed(bool active);
+  void shutdown();
   window* window() const;
 
 private:

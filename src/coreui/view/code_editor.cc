@@ -128,7 +128,7 @@ void code_editor::draw(const rect& dirty_rect) {
     }
   }
 
-  if (editable_) {
+  if (should_draw_caret()) {
     const auto [line_index, column] = cursor_line_column();
     if (line_index < rendered_lines.size()) {
       const auto& line = rendered_lines[line_index];

@@ -3,6 +3,9 @@
 #include "uidefs.hpp"
 
 namespace iris {
+namespace platform::win32 {
+class access;
+}
 namespace priv {
 #ifdef _WIN32
 // #if __has_include("Windows.h")
@@ -10,14 +13,12 @@ namespace priv {
 // #endif
 #endif
 class app;
+class window;
 } // namespace priv
 
 namespace ui {
 class window;
 class window_controller;
-struct event {
-  event_type type;
-};
 } // namespace ui
 
 class app_delegate {
@@ -54,7 +55,9 @@ protected:
 
 private:
   friend class ui::window;
+  friend class priv::window;
   friend class priv::app;
+  friend class platform::win32::access;
 
   priv::app* d;
 };

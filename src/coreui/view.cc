@@ -1,5 +1,7 @@
 #include "view.hpp"
 
+#include "window.hpp"
+
 #include "include/core/SkColor.h"
 #include "include/core/SkPaint.h"
 #include "include/core/SkRect.h"
@@ -128,6 +130,9 @@ void view::add_child(view* v) {
   auto index = subviews_.size();
   subviews_.push_back(v);
   YGNodeInsertChild(d_->node_, v->d_->node_, index);
+  v->set_gfx_context(gfx_ctx_.get());
+  v->mark_layout_dirty();
+  mark_layout_dirty();
 }
 void view::remove_child(view* v) {
   if (!v) {
@@ -140,6 +145,24 @@ void view::remove_child(view* v) {
   subviews_.erase(iter);
   YGNodeRemoveChild(d_->node_, v->d_->node_);
   v->parent_ = nullptr;
+  v->set_gfx_context(nullptr);
+  v->mark_layout_dirty();
+  mark_layout_dirty();
+}
+
+void view::detach_child(view* v) {
+  if (!v) {
+    return;
+  }
+  auto iter = std::find(subviews_.begin(), subviews_.end(), v);
+  if (iter == subviews_.end()) {
+    return;
+  }
+  subviews_.erase(iter);
+  YGNodeRemoveChild(d_->node_, v->d_->node_);
+  v->parent_ = nullptr;
+  v->mark_layout_dirty();
+  mark_layout_dirty();
 }
 
 view* view::hit_test(point const& p) const {
@@ -162,6 +185,32 @@ view* view::hit_test(point const& p) const {
   }
 
   return const_cast<view*>(this);
+}
+
+window* view::owning_window() const {
+  auto* ctx = gfx_ctx_.get();
+  return ctx ? ctx->window() : nullptr;
+}
+
+rect view::screen_rect() const {
+  auto screen = get_layout_rect();
+  for (auto* ancestor = parent_; ancestor != nullptr; ancestor = ancestor->parent_) {
+    const auto ancestor_rect = ancestor->get_layout_rect();
+    screen.left += ancestor_rect.left;
+    screen.top += ancestor_rect.top;
+  }
+
+  if (auto* wnd = owning_window()) {
+    const auto frame_rect = wnd->frame();
+    const auto content = wnd->content_rect();
+    screen.left += frame_rect.left + content.left;
+    screen.top += frame_rect.top + content.top;
+  }
+  return screen;
+}
+
+YGNodeRef view::layout_node() const {
+  return d_->node_;
 }
 
 bool view::mouse_down(const mouse_event&) {
@@ -201,6 +250,10 @@ bool view::key_char(const key_event&) {
 }
 
 void view::on_focus_changed(bool) {}
+
+rect view::dirty_rect() const {
+  return get_layout_rect();
+}
 
 float view::width() const {
   return YGNodeLayoutGetWidth(d_->node_);
@@ -290,7 +343,25 @@ YGNodeRef view::yoga_node() const {
   return d_->node_;
 }
 
-void view::mark_draw_dirty() {}
+void view::mark_draw_dirty() {
+  auto* wnd = owning_window();
+  if (!wnd) {
+    return;
+  }
+
+  auto dirty = dirty_rect();
+  if (dirty.width <= 0.0f || dirty.height <= 0.0f) {
+    return;
+  }
+
+  const auto absolute_rect = screen_rect();
+  const auto& frame = wnd->frame();
+  dirty.left = absolute_rect.left - frame.left;
+  dirty.top = absolute_rect.top - frame.top;
+  dirty.width = absolute_rect.width;
+  dirty.height = absolute_rect.height;
+  wnd->request_redraw(dirty);
+}
 
 void view::mark_layout_dirty() {
   d_->mark_layout_dirty();

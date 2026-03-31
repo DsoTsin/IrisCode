@@ -1,4 +1,5 @@
 #include "coreui/app.hpp"
+#include "coreui/dock_window.hpp"
 #include "coreui/view/dock_view.hpp"
 #include "coreui/view/code_editor.hpp"
 #include "coreui/view/button.hpp"
@@ -31,13 +32,11 @@ int main() {
       .align_items(iris::ui::Align::FlexStart)
       .padding(10.0f);
 
-  
   iris::ref_ptr<iris::ui::title_button> title_button(new iris::ui::title_button());
-  title_button->width(120.f).height(40.f);
+  title_button->width(120.0f).height(40.0f);
 
-  
   iris::ref_ptr<iris::ui::vsplitter> vsplit(new iris::ui::vsplitter());
-  vsplit->width(4);
+  vsplit->width(4.0f);
 
   iris::ref_ptr<iris::ui::label> sidebar_title(new iris::ui::label());
   sidebar_title->text("Project")
@@ -47,11 +46,19 @@ int main() {
       .auto_height();
 
   iris::ref_ptr<iris::ui::button> build_button(new iris::ui::button());
-  build_button->text("构建").width(120.0f).height(34.0f);
+  build_button->text("Build").width(120.0f).height(34.0f);
+
+  iris::ref_ptr<iris::ui::button> undock_button(new iris::ui::button());
+  undock_button->text("Undock Editor").width(120.0f).height(34.0f);
+
+  iris::ref_ptr<iris::ui::button> dock_button(new iris::ui::button());
+  dock_button->text("Dock Editor").width(120.0f).height(34.0f);
 
   sidebar->add_child(title_button.get());
   sidebar->add_child(sidebar_title.get());
   sidebar->add_child(build_button.get());
+  sidebar->add_child(undock_button.get());
+  sidebar->add_child(dock_button.get());
 
   iris::ref_ptr<iris::ui::code_editor> editor(new iris::ui::code_editor());
   editor->set_language(iris::ui::code_language::cpp);
@@ -68,6 +75,22 @@ int main() {
   root->dock(sidebar.get(), iris::ui::dock_position::left);
   root->dock(vsplit.get(), iris::ui::dock_position::fill);
   root->dock(editor.get(), iris::ui::dock_position::fill);
+
+  iris::ref_ptr<iris::ui::dock_window> editor_window;
+  undock_button->on_click([&]() {
+    if (editor_window || editor->parent() != root.get()) {
+      return;
+    }
+    editor_window = root->undock_to_window(editor.get());
+  });
+  dock_button->on_click([&]() {
+    if (!editor_window) {
+      return;
+    }
+    if (editor_window->redock_to(root.get(), iris::ui::dock_position::fill)) {
+      editor_window = iris::ref_ptr<iris::ui::dock_window>();
+    }
+  });
 
   window_ref->set_content_view(root.get());
   window_ref->show();
